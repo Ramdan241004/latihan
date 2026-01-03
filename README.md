@@ -53,3 +53,9 @@ MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
 MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 EOF
 ```
+
+```sh
+cat << 'EOF' > /var/www/efs/modul2.smkn1panjalu.cloud/public/health
+OK
+EOF
+```
