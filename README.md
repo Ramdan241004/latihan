@@ -59,3 +59,21 @@ cat << 'EOF' > /var/www/efs/modul2.smkn1panjalu.cloud/public/health
 OK
 EOF
 ```
+
+```sh
+cat <<EOF > /etc/apache2/sites-available/modul2.smkn1panjalu.cloud.conf
+<VirtualHost *:80>
+    ServerName modul2.smkn1panjalu.cloud
+    DocumentRoot /var/www/efs/modul2.smkn1panjalu.cloud/public
+
+    <Directory /var/www/efs/modul2.smkn1panjalu.cloud/public>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    ErrorLog \${APACHE_LOG_DIR}/error.log
+    CustomLog \${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+EOF
+```
